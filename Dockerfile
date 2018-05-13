@@ -7,15 +7,14 @@ RUN npm i npm@latest -g && \
     npm i -g @angular/cli
 COPY ./ /app/
 RUN ng build
+ENV myCustomEnvVar="This is a sample"
 ARG env=prod
 
-ENV myCustomEnvVar="This is a sample"
 
-
-# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
-FROM nginx:latest
-COPY --from=node /app/dist/my-angular-project/ /usr/share/nginx/html
-COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+# # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+# FROM nginx:latest
+# COPY --from=node /app/dist/my-angular-project/ /usr/share/nginx/html
+# COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 
 # set a health check
