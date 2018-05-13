@@ -2,8 +2,7 @@ pipeline {
     agent { dockerfile true }
     stages {
         stage('Build Image') {
-            steps {
-            }
+
         }
         stage('Test Image') {
             steps {
