@@ -9,6 +9,8 @@ COPY ./ /app/
 RUN ng build
 ARG env=prod
 
+ENV myCustomEnvVar="This is a sample"
+
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
 FROM nginx:latest
@@ -17,8 +19,12 @@ COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 
 # set a health check
-HEALTHCHECK --interval=5s \
-            --timeout=5s \
-            CMD curl -f http://127.0.0.1:80 || exit 1
+# HEALTHCHECK --interval=5s \
+#             --timeout=5s \
+#             CMD curl -f http://127.0.0.1:80 || exit 1
 
-EXPOSE 80
+# EXPOSE 80HEALTHCHECK --interval=5s \
+#             --timeout=5s \
+#             CMD curl -f http://127.0.0.1:80 || exit 1
+
+# EXPOSE 80

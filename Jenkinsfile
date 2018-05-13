@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                echo 'Hello World!'
+                sh 'echo myCustomEnvVar = $myCustomEnvVar'
             }
         }
     }
