@@ -4,12 +4,7 @@ pipeline {
         stage('Build Image') {
             steps {
             echo 'Starting Build Image'
-            }
-        }
-        stage('Test Image') {
-            steps {
-                      sh 'node --version'
-                
+            sh 'node --version'
             }
         }
         stage('Deploy Image') {
