@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Image') {
             steps {
-            sh 'ng test'
+            echo 'End Build'
             }
         }
         stage('Test Image') {
