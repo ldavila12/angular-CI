@@ -1,6 +1,12 @@
 pipeline {
     agent { dockerfile true }
+    
     stages {
+        stage('Build Image') {
+            steps {
+            sh 'ng test'
+            }
+        }
         stage('Test Image') {
             steps {
             sh 'cd /app'
