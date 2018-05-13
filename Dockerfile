@@ -4,7 +4,8 @@ WORKDIR /app
 COPY package.json /app/
 RUN npm i npm@latest -g && \
     npm i && \
-    npm i -g @angular/cli
+    npm i -g @angular/cli && \
+    npm install @angular-devkit/core --save-dev
 COPY ./ /app/
 RUN ng build
 ARG env=prod
