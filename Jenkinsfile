@@ -2,12 +2,14 @@ pipeline {
     agent { dockerfile true }
     stages {
         stage('Build Image') {
-
+            steps {
+            echo 'Starting Build Image'
+            }
         }
         stage('Test Image') {
             steps {
                 echo 'Starting Test Image'
-                 sh 'node --version'
+                
             }
         }
         stage('Deploy Image') {
