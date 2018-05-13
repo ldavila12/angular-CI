@@ -5,7 +5,8 @@ COPY package.json /app/
 RUN npm i npm@latest -g && \
     npm i && \
     npm i -g @angular/cli && \
-    npm install @angular-devkit/core --save-dev
+    npm update && \
+    npm i @angular-devkit/build-optimizer --save-dev
 COPY ./ /app/
 RUN ng build
 ARG env=prod
