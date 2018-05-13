@@ -9,7 +9,7 @@ pipeline {
         stage('Test Image') {
             steps {
                 echo 'Starting Test Image'
-                 sh 'echo npm --version'
+                 sh 'npm --version'
                 
             }
         }
