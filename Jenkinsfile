@@ -1,10 +1,9 @@
 pipeline {
     agent { dockerfile true }
     stages {
-        stage('Build Image') {
+        stage('Test Image') {
             steps {
-            echo 'Starting Build Image'
-            sh 'node --version'
+            sh 'ng test'
             }
         }
         stage('Deploy Image') {
