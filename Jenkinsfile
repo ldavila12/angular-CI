@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Test Image') {
             steps {
-                echo 'Starting Test Image'
-                 sh 'npm --version'
+                      sh 'node --version'
                 
             }
         }
