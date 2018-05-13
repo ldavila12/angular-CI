@@ -1,5 +1,8 @@
 node {
-    def app
+    agent {
+        dockerfile true
+    }
+    stages {
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -10,8 +13,6 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("ldavila12/angular-CI")
     }
 
     stage('Test image') {
@@ -21,6 +22,7 @@ node {
         app.inside {
             sh 'echo "Tests passed"'
         }
+    }
     }
 
 }
