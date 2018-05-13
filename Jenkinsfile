@@ -1,4 +1,4 @@
-node {
+pipeline {
     agent {
         dockerfile true
     }
@@ -23,6 +23,6 @@ node {
             sh 'echo "Tests passed"'
         }
     }
-    }
+}
 
 }
