@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Test Image') {
             steps {
+            sh 'cd /app'
             sh 'ng test'
             }
         }
