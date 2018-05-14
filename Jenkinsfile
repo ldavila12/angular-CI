@@ -10,7 +10,7 @@ pipeline {
         stage('Test Image') {
             steps {
             sh 'cd /app'
-            sh 'ls -l'
+            sh 'ls -a'
             sh 'ng test'
             }
         }
