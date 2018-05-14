@@ -1,13 +1,10 @@
 # Stage 0, based on Node.js, to build and compile Angular
 FROM node:latest 
 WORKDIR /app
-COPY package.json /app/
+COPY ./ /app/
 RUN npm i npm@latest -g && \
     npm i && \
     npm i -g @angular/cli && \
-    npm update && \
-    npm i @angular-devkit/build-optimizer --save-dev
-COPY ./ /app/
 RUN ng build
 ARG env=prod
 
