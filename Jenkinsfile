@@ -4,12 +4,13 @@ pipeline {
     stages {
         stage('Build Image') {
             steps {
-            echo 'End Build'
+            sh 'ls -a'
             }
         }
         stage('Test Image') {
             steps {
             sh 'cd /app'
+            sh 'npm i'
             sh 'ls -a'
             sh 'ng test'
             }

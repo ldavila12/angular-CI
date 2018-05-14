@@ -5,6 +5,7 @@ COPY ./ /app/
 RUN npm i npm@latest -g && \
     npm i && \
     npm i -g @angular/cli 
+    
 RUN ng build
 ARG env=prod
 
